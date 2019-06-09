@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Página con estrellas :D</title>
+        <style>
+            body{
+                background-color: black;
+            }
+        </style>
+    </head>
+    <body>
+        <canvas id="micanvas"></canvas>
+        <script src="stars.js"></script>
+        <script>
+            var canvas = document.getElementById('micanvas');
+            canvas.width = window.screen.availWidth;
+            canvas.height = window.screen.availHeight;
+
+            var imagen = new Image();
+            //evento que indica que se cargo la imagen
+            imagen.onload = function(){
+                var rain = new Rain("micanvas",imagen);
+                rain.let_it_snow();
+            };
+            //se especifica el nombre de la imagen
+            imagen.src ="star.png";
+        </script>
+
+    </body>
+</html>
